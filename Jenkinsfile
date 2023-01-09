@@ -19,13 +19,15 @@ pipeline {
 	
 	stage('SonarQube analysis') {
 		steps {
-    		withMaven(maven: 'mvn') {
-		withSonarQubeEnv(credentialsId: '', installationName: 'Sonarqube') {
-      			sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
-    				}
-  			}
+			dir("/var/jenkins_home/workspace/meeting-room-reservations/ReservationAppTest") {
+    			withMaven(maven: 'mvn') {
+			withSonarQubeEnv(credentialsId: '', installationName: 'Sonarqube') {
+      				sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
+    					}
+  				}
+			}
 		}
-	}	
+   	}    
 	stage("Build"){
             steps {
                 dir("/var/jenkins_home/workspace/meeting-room-reservations/ReservationAppTest") {
