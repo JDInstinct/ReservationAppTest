@@ -18,12 +18,16 @@ pipeline {
         }
 	stage("Build"){
             steps {
-                    sh "mvn -B -DskipTests clean package"
+                dir("/var/jenkins_home/workspace/meeting-room-reservations/ReservationAppTest") {
+                    sh "mvn clean install"
+                }
             }
         }
         stage("Test"){
             steps {
+                dir("/var/jenkins_home/workspace/meeting-room-reservations/ReservationAppTest") {
                     sh "mvn test"
+				}
 			}
 		}
 	}
