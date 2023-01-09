@@ -18,16 +18,12 @@ pipeline {
         }
 	stage("Build"){
             steps {
-                dir("/") {
                     sh "mvn -B -DskipTests clean package"
-                }
             }
         }
         stage("Test"){
             steps {
-                dir("/") {
                     sh "mvn test"
-				}
 			}
 		}
 	}
