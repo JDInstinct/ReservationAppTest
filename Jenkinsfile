@@ -25,6 +25,7 @@ pipeline {
 			ls -al
 			mvn clean install
 			'''
+			}
                 }
             }
         }
