@@ -21,6 +21,7 @@ pipeline {
                 dir("/var/jenkins_home/workspace/meeting-room-reservations/ReservationAppTest") {
                     sh '''
 			chmod +x ./mvnw
+			ls -al
 			./mvnw clean install
 			'''
                 }
