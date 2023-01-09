@@ -13,14 +13,14 @@ pipeline {
         }
         stage("Build"){
             steps {
-                dir("meeting-room-reservations") {
+                dir("") {
                     sh "mvn clean install"
                 }
             }
         }
         stage("Test"){
             steps {
-                dir("meeting-room-reservation") {
+                dir("") {
                     sh "mvn test"
 				}
 			}
