@@ -11,7 +11,7 @@ pipeline {
                 sh "git clone https://github.com/JDInstinct/ReservationAppTest"
             }
         }
-        stage("Build"){
+        stage("Access"){
             steps {
                 dir("/pom.xml") {
                     sh "ls -al /pom.xml"
