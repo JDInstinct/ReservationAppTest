@@ -14,6 +14,13 @@ pipeline {
         stage("Build"){
             steps {
                 dir("/pom.xml") {
+                    sh "ls -al /pom.xml"
+                }
+            }
+        }
+	stage("Build"){
+            steps {
+                dir("/pom.xml") {
                     sh "mvn -B -DskipTests clean package"
                 }
             }
