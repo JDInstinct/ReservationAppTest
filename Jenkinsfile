@@ -23,7 +23,7 @@ pipeline {
                     sh '''
 			chmod +x ./mvnw
 			ls -al
-			mvn clean install
+			mvnw clean install
 			'''
 			}
                 }
