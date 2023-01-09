@@ -20,7 +20,7 @@ pipeline {
             steps {
                 dir("/var/jenkins_home/workspace/meeting-room-reservations/ReservationAppTest") {
 		withMaven(maven: 'mvn') {
-                    sh "mvn clean install sonar:sonar"
+                    sh "mvn -x clean install sonar:sonar"
 			}
                 }
             }
