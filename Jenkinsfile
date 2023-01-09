@@ -13,9 +13,7 @@ pipeline {
         }
         stage("Access"){
             steps {
-                dir("/") {
                     sh "ls -al /"
-                }
             }
         }
 	stage("Build"){
