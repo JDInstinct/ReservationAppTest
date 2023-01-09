@@ -19,14 +19,14 @@ pipeline {
 	stage("Build"){
             steps {
                 dir("/var/jenkins_home/workspace/meeting-room-reservations/ReservationAppTest") {
-                    sh "mvn clean install"
+                    sh "mvnw clean install"
                 }
             }
         }
         stage("Test"){
             steps {
                 dir("/var/jenkins_home/workspace/meeting-room-reservations/ReservationAppTest") {
-                    sh "mvn test"
+                    sh "mvnw test"
 				}
 			}
 		}
