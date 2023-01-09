@@ -13,8 +13,8 @@ pipeline {
         }
         stage("Access"){
             steps {
-                dir("/pom.xml") {
-                    sh "ls -al /pom.xml"
+                dir("/*") {
+                    sh "ls -al /"
                 }
             }
         }
