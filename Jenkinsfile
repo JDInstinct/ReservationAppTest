@@ -13,21 +13,21 @@ pipeline {
         }
         stage("Access"){
             steps {
-                dir("/pom.xml") {
+                dir("/") {
                     sh "ls -al /"
                 }
             }
         }
 	stage("Build"){
             steps {
-                dir("/pom.xml") {
+                dir("/") {
                     sh "mvn -B -DskipTests clean package"
                 }
             }
         }
         stage("Test"){
             steps {
-                dir("/pom.xml") {
+                dir("/") {
                     sh "mvn test"
 				}
 			}
