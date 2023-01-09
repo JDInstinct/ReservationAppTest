@@ -13,13 +13,17 @@ pipeline {
         }
         stage("Build"){
             steps {
+                dir("/pom.xml") {
                     sh "mvn clean install"
+                }
             }
         }
         stage("Test"){
             steps {
+                dir("/pom.xml") {
                     sh "mvn test"
+				}
+			}
 		}
 	}
-}
 }
