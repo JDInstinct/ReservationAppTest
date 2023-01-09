@@ -28,7 +28,9 @@ pipeline {
         stage("Test"){
             steps {
                 dir("/var/jenkins_home/workspace/meeting-room-reservations/ReservationAppTest") {
+		withMaven(maven: 'mvn') {
                     sh "mvn test"
+					}
 				}
 			}
 		}
