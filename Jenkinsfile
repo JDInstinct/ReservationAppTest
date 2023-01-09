@@ -13,7 +13,7 @@ pipeline {
         }
         stage("Access"){
             steps {
-                    sh "ls -al /var/jenkins_home/workspace/meeting-room-reservations"
+                    sh "ls -al /var/jenkins_home/workspace/meeting-room-reservations/ReservationAppTest"
             }
         }
 	stage("Build"){
