@@ -16,7 +16,7 @@ pipeline {
                     sh "ls -al /var/jenkins_home/workspace/meeting-room-reservations/ReservationAppTest"
             }
         }
-	stage("Sonarqube analysis && Build"){
+	stage("Sonarqube analysis && Build Jar"){
             steps {
                 dir("/var/jenkins_home/workspace/meeting-room-reservations/ReservationAppTest") {
 		withMaven(maven: 'mvn') {
