@@ -20,7 +20,7 @@ pipeline {
             steps {
                 dir("/var/jenkins_home/workspace/meeting-room-reservations/ReservationAppTest") {
 		withMaven(maven: 'mvn') {
-		withSonarScanner('sonarqube') {	
+		withSonarCubeEnv('sonarqube') {	
                     sh "mvn -X clean install sonar:sonar"
 		}
                 }
