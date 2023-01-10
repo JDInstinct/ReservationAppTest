@@ -1,6 +1,6 @@
 pipeline {
   agent {
-	  docker {'docker'}
+	  docker { image 'docker'}
   }
     stages {
         stage("Clean up"){
