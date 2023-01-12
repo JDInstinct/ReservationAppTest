@@ -1,5 +1,7 @@
 pipeline {
   agent any
+  tools {
+	  docker 'docker'
     stages {
         stage("Clean up"){
             steps {
@@ -49,6 +51,7 @@ pipeline {
 		}
 		}
             }
+	}
         }
 	}
 }
